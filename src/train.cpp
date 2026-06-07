@@ -53,13 +53,12 @@ int Train::getLength() {
             countOp++;
             length++;
         } while (temp != first);
-        
+        // cppcheck-suppress constVariablePointer
         Car* current = first;
         do {
             current = current->prev;
             countOp++;
         } while (current != first);
-        
         return length;
     }
 }
