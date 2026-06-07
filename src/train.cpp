@@ -46,17 +46,20 @@ int Train::getLength() {
             length++;
         }
     } else {
-        Car* current = first;
+        const Car* temp = first;
         int length = 0;
         do {
-            current = current->next;
+            temp = temp->next;
             countOp++;
             length++;
-        } while (current != first);
+        } while (temp != first);
+        
+        Car* current = first;
         do {
             current = current->prev;
             countOp++;
         } while (current != first);
+        
         return length;
     }
 }
